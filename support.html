@@ -1,24 +1,104 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Figure Shelf Support</title>
-<style>body{font:17px/1.55 -apple-system,system-ui,sans-serif;max-width:680px;margin:0 auto;padding:32px 16px;color:#2b2b2b;background:#faf7f2}h1{font-size:28px}h2{font-size:19px;margin-top:28px}</style></head>
+<meta name="description" content="Figure Shelf: a calm toy box of 3D animals, dinosaurs, creatures, robots and animatronics you can dress up, animate and see in your room with AR.">
+<style>
+:root{--bg:#faf7f2;--card:#ffffff;--ink:#2b2b2b;--muted:#6b6560;--accent:#e8743b;--accent-soft:#fbe6d9;--line:#ece5dc}
+@media (prefers-color-scheme: dark){:root{--bg:#1c1a18;--card:#262320;--ink:#f1ece6;--muted:#b3aba2;--accent:#f08a55;--accent-soft:#3a2a20;--line:#36312c}}
+*{box-sizing:border-box}
+body{margin:0;font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--accent)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 24px;text-align:center}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:14px;padding:4px 12px;border-radius:999px;margin-bottom:14px}
+h1{font-size:44px;line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+.lead{font-size:20px;color:var(--muted);max-width:640px;margin:0 auto}
+.pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:20px}
+.pills span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:15px}
+.gallery{display:flex;gap:18px;overflow-x:auto;padding:28px 4px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.shot{flex:0 0 auto;width:210px;scroll-snap-align:center;text-align:center;margin:0}
+.shot img{width:100%;border-radius:28px;border:6px solid var(--ink);background:var(--card);display:block;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.shot figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+h2{font-size:28px;margin:48px 0 16px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.num{font-size:30px;font-weight:700;color:var(--accent);line-height:1}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 60px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:18px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--muted)}
+.contact{background:var(--accent-soft);border-radius:24px;padding:28px;text-align:center;margin:48px 0}
+.contact a.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:999px;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:8px 0 40px}
+@media (max-width:600px){h1{font-size:34px}.lead{font-size:18px}.shot{width:170px}}
+</style>
+</head>
 <body>
-<h1>Figure Shelf Support</h1>
-<p>Figure Shelf lets you browse animals, creatures, robots, animatronics and dinosaurs, change their colors and accessories, make them move, and see them in the room with the camera. Everything is open from the start.</p>
+<div class="wrap">
+
+<header>
+  <div class="badge">iPhone and iPad</div>
+  <h1>Figure Shelf</h1>
+  <p class="lead">A calm toy box of 3D figures. Pick one, dress it up, make it move, and bring it into your room with augmented reality. Everything is open from the start.</p>
+  <div class="pills"><span>No ads</span><span>No accounts</span><span>No tracking</span><span>Works offline</span><span>Gentle sounds</span></div>
+</header>
+
+<div class="gallery" aria-label="Screenshots">
+  <figure class="shot"><img src="img/picker.jpg" alt="The figure picker with animals, creatures, robots, animatronics and dinosaurs" loading="lazy"><figcaption>Pick from 60 figures</figcaption></figure>
+  <figure class="shot"><img src="img/dinosaur.jpg" alt="A realistic T. rex shown full screen" loading="lazy"><figcaption>Real-looking dinosaurs</figcaption></figure>
+  <figure class="shot"><img src="img/accessories.jpg" alt="Kitty wearing a crown, heart glasses and a scarf" loading="lazy"><figcaption>Hats, glasses and more</figcaption></figure>
+  <figure class="shot"><img src="img/wave.jpg" alt="Bear waving" loading="lazy"><figcaption>Dance, jump, run, spin, wave</figcaption></figure>
+  <figure class="shot"><img src="img/robot.jpg" alt="Supercar robot transformed into a car" loading="lazy"><figcaption>Robots that transform</figcaption></figure>
+  <figure class="shot"><img src="img/zoom.jpg" alt="Zoomed in on a dinosaur's head" loading="lazy"><figcaption>Pinch to zoom in close</figcaption></figure>
+  <figure class="shot"><img src="img/fullscreen.jpg" alt="A figure filling the whole screen" loading="lazy"><figcaption>Swipe for full screen</figcaption></figure>
+</div>
+
+<h2>What's on the shelf</h2>
+<div class="grid">
+  <div class="card"><div class="num">18</div><h3>Animals</h3><p>Bunny, kitty, fox and penguin, plus lion, zebra, elephant, hippo, turtle and more.</p></div>
+  <div class="card"><div class="num">12</div><h3>Dinosaurs</h3><p>Museum-style T. rex, Triceratops, Stegosaurus, a feathered Velociraptor and a gliding Pteranodon.</p></div>
+  <div class="card"><div class="num">10</div><h3>Creatures</h3><p>Imaginary friends like Mosskip, Glassfin and Lanternquill.</p></div>
+  <div class="card"><div class="num">10</div><h3>Robots</h3><p>Tap Run and they turn into a supercar, jet, helicopter, speedboat and more.</p></div>
+  <div class="card"><div class="num">10</div><h3>Animatronics</h3><p>Friendly park-style robots with clicky, servo-like moves.</p></div>
+</div>
+
+<h2>Make it yours</h2>
+<div class="grid">
+  <div class="card"><h3>Colors</h3><p>Seven looks per figure, from Sunny and Ocean to Night and Snow.</p></div>
+  <div class="card"><h3>Accessories</h3><p>More than 30 hats, glasses, masks, scarves and bow ties, fitted to each face.</p></div>
+  <div class="card"><h3>Moves</h3><p>Dance, Jump, Run, Spin and Wave. Tap Again to keep it going.</p></div>
+  <div class="card"><h3>Undo and Reset</h3><p>Every change can be undone. Reset brings back the original look.</p></div>
+</div>
+
 <h2>How to use it</h2>
-<ul>
-<li><b>Pick a figure:</b> tap one in the list at the bottom.</li>
-<li><b>Turn and zoom:</b> drag sideways to turn it, pinch to zoom, double-tap to go back.</li>
-<li><b>Full screen:</b> swipe the menu down once to keep only the actions, and again to hide them. Tap "Show menu" to bring it back.</li>
-<li><b>See in my room:</b> move the phone slowly until the floor is found. Tap the floor to move the figure, pinch to resize, twist to turn.</li>
-<li><b>Undo and Reset:</b> the round arrow undoes the last change. Reset goes back to the original look.</li>
-</ul>
+<ol class="steps">
+  <li><b>Pick a figure</b> from the list at the bottom. Drag sideways on it to turn it around.</li>
+  <li><b>Zoom and look closer:</b> pinch to zoom, move two fingers to slide, double-tap to go back.</li>
+  <li><b>Go full screen:</b> swipe the menu down once to keep only the moves, and again to hide them. Tap "Show menu" to bring it back.</li>
+  <li><b>See it in your room:</b> tap "See in my room" and move the phone slowly until the floor is found. Tap the floor to move the figure, pinch to resize, twist to turn.</li>
+</ol>
+
 <h2>Common questions</h2>
-<p><b>The room view is black.</b> Allow camera access in Settings &gt; Figure Shelf &gt; Camera.</p>
-<p><b>There's no "See in my room" button.</b> The device doesn't support augmented reality. Everything else works.</p>
-<p><b>How do I turn sound off?</b> Tap the speaker button at the top.</p>
-<p><b>Where is the parents' info?</b> Press and hold the small "i" button for 3 seconds.</p>
-<h2>Contact</h2>
-<p>Email <a href="mailto:support@brightsteps.app">support@brightsteps.app</a>. We usually reply within a few days.</p>
-<p><a href="privacy.html">Privacy Policy</a></p>
-</body></html>
+<details><summary>The room view is black</summary><p>Allow camera access in Settings &gt; Figure Shelf &gt; Camera, then open the room view again.</p></details>
+<details><summary>There's no "See in my room" button</summary><p>Your device doesn't support augmented reality. Everything else in the app works normally.</p></details>
+<details><summary>How do I turn sound off?</summary><p>Tap the speaker button at the top of the screen.</p></details>
+<details><summary>Where is the parents' info?</summary><p>Press and hold the small "i" button for 3 seconds. It shows the version, the privacy policy and this page.</p></details>
+<details><summary>Does the app collect any data?</summary><p>No. There are no accounts, ads or analytics, and the camera image never leaves your device. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+
+<div class="contact">
+  <h2 style="margin-top:0">Need help?</h2>
+  <p>Send us a note and we'll reply within a few days.</p>
+  <a class="btn" href="mailto:support@brightsteps.app">support@brightsteps.app</a>
+</div>
+
+<footer><a href="privacy.html">Privacy Policy</a> · © 2026 Fedir Plotnikov</footer>
+</div>
+</body>
+</html>
